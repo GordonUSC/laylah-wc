@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#2A0E12" />
+<title>For Laylah · Portugal vs Uzbekistan · Houston</title>
+<meta name="description" content="A bespoke World Cup 2026 concierge page for Laylah Makhmour, from Gordon and Darby." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+<style>
+:root {
+  /* Palette — wine cellar with stadium light */
+  --bg: #FBF6EE;
+  --bg-2: #F4ECDE;
+  --ink: #1B1208;
+  --ink-2: #3D2A18;
+  --mute: #7A6A55;
+  --hair: rgba(27, 18, 8, 0.10);
+  --hair-2: rgba(27, 18, 8, 0.05);
+
+  /* Portugal */
+  --pt-red: #B71E3B;
+  --pt-red-deep: #7A0E22;
+  --pt-green: #1F6B3A;
+
+  /* Uzbekistan */
+  --uz-blue: #1EB4E1;
+  --uz-blue-deep: #0C6A88;
+  --uz-green: #2E9F4F;
+
+  /* Accent */
+  --gold: #C9A24D;
+  --gold-soft: rgba(201, 162, 77, 0.18);
+
+  --f-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --f-body: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --ease: cubic-bezier(.16, 1, .3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--f-body);
+  color: var(--ink);
+  background:
+    radial-gradient(900px 500px at 80% -5%, rgba(201, 162, 77, 0.10), transparent 70%),
+    radial-gradient(700px 500px at -10% 110%, rgba(30, 180, 225, 0.08), transparent 70%),
+    var(--bg);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01" on;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3rem) clamp(1.25rem, 5vw, 2rem);
+}
+
+/* ---------- Header ---------- */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 1.25rem;
+}
+.eyebrow::before {
+  content: "";
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold-soft);
+}
+
+h1.hero {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 9vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0 0 1.25rem;
+  color: var(--ink);
+}
+h1.hero em {
+  font-style: italic;
+  font-variation-settings: "SOFT" 80;
+  color: var(--pt-red-deep);
+}
+
+.lede {
+  font-size: clamp(1.05rem, 4.4vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0 0 2rem;
+}
+
+/* ---------- Match card ---------- */
+.match {
+  border: 1px solid var(--hair);
+  border-radius: 18px;
+  padding: 1.5rem 1.25rem;
+  background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 12px 30px -22px rgba(27,18,8,0.20);
+  margin: 0 0 2.5rem;
+}
+.match-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+}
+.team {
+  text-align: center;
+}
+.team .flag {
+  font-size: 2.4rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.team .name {
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+.team .tag {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-top: 0.25rem;
+}
+.vs {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--gold);
+  padding: 0 0.25rem;
+}
+.match-meta {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--hair);
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--mute);
+  display: grid;
+  gap: 0.4rem;
+}
+.match-meta strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- Sections ---------- */
+section {
+  margin: 0 0 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--hair-2);
+}
+section:first-of-type { border-top: 0; padding-top: 0; }
+
+h2 {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 6.5vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 1rem;
+}
+
+p { margin: 0 0 1rem; }
+p:last-child { margin-bottom: 0; }
+strong { color: var(--ink); }
+em.accent { font-style: italic; color: var(--pt-red-deep); }
+em.accent-uz { font-style: italic; color: var(--uz-blue-deep); }
+
+ul.notes {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+ul.notes li {
+  position: relative;
+  padding: 0.55rem 0 0.55rem 1.5rem;
+  border-bottom: 1px dashed var(--hair-2);
+}
+ul.notes li:last-child { border-bottom: 0; }
+ul.notes li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 1rem;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* ---------- Group K table ---------- */
+.group {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.5rem 0 1rem;
+}
+.group .row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  background: #fff;
+  border: 1px solid var(--hair);
+  border-radius: 12px;
+}
+.group .row .flag { font-size: 1.4rem; }
+.group .row .name { font-family: var(--f-display); font-size: 1.05rem; font-weight: 500; }
+.group .row .tag {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+/* ---------- Ask Darby ---------- */
+.ask {
+  background:
+    linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  border: 1px solid var(--hair);
+  border-radius: 18px;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 12px 30px -22px rgba(27,18,8,0.20);
+}
+.ask h2 { margin-top: 0; }
+.ask p { color: var(--ink-2); }
+
+.ask textarea {
+  width: 100%;
+  min-height: 140px;
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--hair);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  resize: vertical;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0.5rem 0 1rem;
+}
+.ask textarea:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
+.ask .send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 52px;
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  background: var(--pt-red);
+  border: 0;
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 20px -10px rgba(183, 30, 59, 0.55);
+  transition: transform 120ms var(--ease), background 120ms var(--ease);
+}
+.ask .send:active { transform: translateY(1px); background: var(--pt-red-deep); }
+.ask .send .arrow { font-size: 1.05rem; }
+
+.ask .hint {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--hair);
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+  text-align: center;
+}
+footer .heart { color: var(--pt-red); }
+
+@media (min-width: 640px) {
+  .team .flag { font-size: 3rem; }
+  .team .name { font-size: 1.5rem; }
+  .vs { font-size: 1.4rem; }
+  .group .row .flag { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+  <!-- HERO -->
+  <div class="eyebrow">Bespoke · For Laylah · WC 26</div>
+
+  <h1 class="hero">Hi Laylah. <em>Houston is waiting.</em></h1>
+
+  <p class="lede">
+    Years ago, a quiet girl rode her scooter into a park hoping someone her age would say hi. Mel did.
+    From that hello to last night, when you stood next to her as her best woman, that is the arc. Day 1, literally.
+  </p>
+
+  <p class="lede">
+    Gordon and I were lucky to share the room with you this weekend. Now, on to the next chapter you have circled.
+    This page is yours. Built just for you. One of the matches the whole continent should be watching, and you have the ticket.
+  </p>
+
+  <!-- MATCH CARD -->
+  <div class="match" aria-label="Your match">
+    <div class="match-row">
+      <div class="team">
+        <span class="flag" aria-hidden="true">🇵🇹</span>
+        <div class="name">Portugal</div>
+        <div class="tag">Selecção</div>
+      </div>
+      <div class="vs">vs</div>
+      <div class="team">
+        <span class="flag" aria-hidden="true">🇺🇿</span>
+        <div class="name">Uzbekistan</div>
+        <div class="tag">Oq Bo'rilar</div>
+      </div>
+    </div>
+    <div class="match-meta">
+      <div><strong>Match 47</strong> · Group K · World Cup 2026</div>
+      <div><strong>Tuesday, June 23, 2026</strong> · Kickoff <strong>12:00 PM CT</strong> (Houston local)</div>
+      <div>NRG Stadium · Houston, Texas</div>
+    </div>
+  </div>
+
+  <!-- WHY IT MATTERS -->
+  <section>
+    <h2>Why this one matters</h2>
+    <p>
+      Two storylines are going to be in the air the second the whistle blows.
+    </p>
+    <ul class="notes">
+      <li><strong>Uzbekistan's first World Cup, ever.</strong> Not the kind of first that comes around again. Every fan in white and blue in your section has waited their whole lives for this kickoff. You are inside a once-only moment for a country.</li>
+      <li><strong>Possibly Ronaldo's final World Cup.</strong> The reporting points to this being his last dance with Portugal. If he plays, you watched him in person. That sentence is worth a lot more in ten years than it sounds today.</li>
+      <li><strong>Houston is a hub of both diasporas.</strong> The Portuguese community in Texas runs deep. Uzbek expat networks across the South will travel in. The away end is going to feel like a wedding too, just bigger.</li>
+    </ul>
+  </section>
+
+  <!-- THE GROUP -->
+  <section>
+    <h2>Your Group K, briefly</h2>
+    <p>The four nations battling for the top two spots out of the group:</p>
+    <div class="group">
+      <div class="row">
+        <span class="flag" aria-hidden="true">🇵🇹</span>
+        <div class="name">Portugal</div>
+        <div class="tag">Top seed</div>
+      </div>
+      <div class="row">
+        <span class="flag" aria-hidden="true">🇺🇿</span>
+        <div class="name">Uzbekistan</div>
+        <div class="tag">Debut</div>
+      </div>
+      <div class="row">
+        <span class="flag" aria-hidden="true">🇨🇩</span>
+        <div class="name">Congo DR</div>
+        <div class="tag">Returning</div>
+      </div>
+      <div class="row">
+        <span class="flag" aria-hidden="true">🇨🇴</span>
+        <div class="name">Colombia</div>
+        <div class="tag">Contender</div>
+      </div>
+    </div>
+    <p>
+      Group K is a real one. Portugal is the favorite. Colombia is the wildcard with real shooting power.
+      Congo DR are back at a World Cup after fifty plus years and they will not be rolled over.
+      And Uzbekistan, your other team for the day, get to write their first paragraph in the history books from your section.
+    </p>
+  </section>
+
+  <!-- HOUSTON -->
+  <section>
+    <h2>Houston, the city</h2>
+    <p>
+      NRG Stadium is the host venue. Climate-controlled, which Texas in late June demands.
+      A bonus detail worth knowing. Portugal also plays Congo DR at NRG on <strong>June 17</strong>, six days before your match. The Portuguese travelling support will already know NRG by the time you walk in. The away end on the 23rd will feel rehearsed.
+    </p>
+    <p>
+      The match-day vibe in Houston will spill across downtown, Midtown, and the Montrose stretch. You will not need to plan every meal and bar in advance. Houston rewards wandering. Tell me what you like, and I will build you a short list, not a long one.
+    </p>
+  </section>
+
+  <!-- WHERE PORTUGAL LANDS IN HOUSTON -->
+  <section>
+    <h2>Where Portugal lands in Houston</h2>
+    <p>
+      Houston has a Portuguese diaspora that runs deeper than most people realize. A short list of places where the away end will pre-game and post-game.
+    </p>
+    <ul class="notes">
+      <li><strong>OPORTO Fooding House &amp; Wine · Midtown.</strong> Portuguese-inspired food and wine bar. The closest Houston gets to a Lisbon back-room. A natural pre-match spot.</li>
+      <li><strong>Hugo's · Montrose.</strong> Houston's celebrated Spanish and Portuguese kitchen. A heavier sit-down option for the night before.</li>
+      <li><strong>Common Bond Bistro · Montrose.</strong> European-style pastries that will remind Portuguese visitors of a pastelaria. Coffee and custard tart in the morning before the match.</li>
+      <li><strong>Phoenix · Montrose (1643 Richmond).</strong> A Montrose sports bar that has been a soccer-fan refuge since long before this match was on the calendar.</li>
+      <li><strong>Pitch 25 Beer Park.</strong> An indoor soccer pitch inside a bar with around 100 beers on tap. The dedicated soccer-fan venue in the city.</li>
+    </ul>
+    <p style="margin-top: 1rem; color: var(--ink-2); font-style: italic;">
+      Want a tighter shortlist for your specific tastes? Use the Ask Darby box at the bottom and I will tune one for you.
+    </p>
+  </section>
+
+  <!-- GETTING TO NRG -->
+  <section>
+    <h2>Getting to NRG</h2>
+    <p>
+      The match kicks off at 12:00 PM CT. Gates open at 10:00 AM (two hours before). Plan to be inside by 11:00 AM so you have time to clear security, find your seat, and feel the atmosphere settle.
+    </p>
+
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--pt-red-deep);">By METRORail (the simplest option)</h3>
+    <p>
+      The Red Line runs directly to NRG Park station, about 21 minutes from Downtown. Trains every 6 minutes during peak. Fare is $1.25 one way. <strong>From a Downtown or Midtown hotel this is the move.</strong>
+    </p>
+
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--pt-red-deep);">By rideshare</h3>
+    <p>
+      Uber, Lyft, and Waymo all run to NRG. Waymo expanded its Houston service area to NRG Stadium specifically for the World Cup. Surge pricing on match days is real. If you ride, plan to be dropped off no later than 10:30 AM.
+    </p>
+
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--pt-red-deep);">By car</h3>
+    <p>
+      On-site parking lots open early and fill fast. Pricing climbs sharply on match days. Off-site lots in the Texas Medical Center area are cheaper and walkable. <strong>If you drive, reserve a spot in advance.</strong>
+    </p>
+
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--pt-red-deep);">Bag policy (read this twice)</h3>
+    <p>
+      NRG enforces the FIFA clear bag policy. You can bring <strong>one clear plastic bag, no larger than 12 by 6 by 12 inches</strong> (a standard one-gallon freezer bag works), <strong>plus one small clutch no larger than 4.5 by 6.5 inches.</strong>
+    </p>
+    <p>
+      <strong>What is not allowed:</strong> backpacks, purses, fanny packs, camera bags, anything opaque. There is <strong>no bag storage at any World Cup 2026 venue.</strong> If you arrive with a prohibited bag, you will need to return to your vehicle or hotel. Plan ahead. Leave anything you do not need at the hotel.
+    </p>
+
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--pt-red-deep);">Weather</h3>
+    <p>
+      Houston in late June is hot and humid. Outside climbs past 95°F by midday. <strong>NRG Stadium is climate-controlled.</strong> Inside is comfortable. The walk from the rail station or the rideshare drop-off is where the heat lives. Sunscreen, water, light layers. Hydrate on the way in.
+    </p>
+  </section>
+
+  <!-- SOCCER, THE BASICS -->
+  <section>
+    <h2>Soccer basics, just for you</h2>
+    <p>
+      No textbook. Eight things that will make the match feel readable from your seat.
+      Read these on the flight to Houston, or in the cab to NRG.
+    </p>
+    <ul class="notes">
+      <li><strong>90 minutes plus stoppage time, no clock pause.</strong> Two halves of 45. The clock keeps running for fouls, throw-ins, injuries. At the end of each half the referee adds a few minutes of "stoppage time" for everything that paused play. The final whistle comes when the ref decides, not when the scoreboard hits zero.</li>
+
+      <li><strong>Positions are loose, watch where the ball is.</strong> Goalkeeper, defenders, midfielders, forwards. Don't get tangled in formations (4-3-3 and so on, you will see them on graphics, they are guides). The game is fluid. Watch the player closest to the ball and the ones running into space.</li>
+
+      <li><strong>Both teams want the ball at all times.</strong> There is no offense and defense like American football. The team without the ball is trying to win it back. The team with it is trying to score. Everyone is doing both, all match.</li>
+
+      <li><strong>Set pieces are scripted dramas.</strong> Corner kicks, free kicks, penalties. These are the moments teams have rehearsed plays for. A lot of World Cup goals come from set pieces. When you see one being set up, lean forward.</li>
+
+      <li><strong>Yellow card is a warning. Red card sends a player off.</strong> Two yellows in one game equals one red. A red means the team plays the rest of the match down a player, ten against eleven. The shape of the whole game changes. Watch the body language after a red.</li>
+
+      <li><strong>Goals are rare, so each one matters more.</strong> 1-0 and 2-1 are common World Cup scores. A 5-0 happens, but it is the exception. Every goal moves the tournament. Don't expect basketball pace, expect chess that occasionally explodes.</li>
+
+      <li><strong>The crowd is the second commentator.</strong> A gasp means something almost happened. A roar means something just did. A long quiet means somebody is hurt or VAR (video review) is checking a call. Listen to the room, you will feel the game.</li>
+
+      <li><strong>For your match, three things to watch for specifically:</strong>
+        <ul style="margin-top: 0.6rem; padding-left: 1.2rem; list-style: disc;">
+          <li><em class="accent">Cristiano Ronaldo, if he plays.</em> He is 41 years old. He moves slowly now, on purpose. Watch what he does <strong>without the ball</strong>. Finding the right pocket of space is what made him one of the greatest of all time. If he scores, you watched history land in front of you.</li>
+          <li><em class="accent-uz">Uzbekistan's goalkeeper.</em> Playing in a World Cup for the first time, in front of his country, in a country that has never been here before. That is a face to find before kickoff and watch all match.</li>
+          <li><strong>The away end.</strong> Houston has both a Portuguese community and an Uzbek community. Both will be loud. When Uzbekistan touches the ball, listen for the white and blue corner. When Portugal does, red and green. You are inside both diasporas at once.</li>
+        </ul>
+      </li>
+    </ul>
+    <p style="margin-top: 1.25rem; color: var(--ink-2); font-style: italic;">
+      That is enough to be readable on the day. Anything else you want to learn before then, ask below.
+    </p>
+  </section>
+
+  <!-- PLAYERS TO FIND -->
+  <section>
+    <h2>Players to find before kickoff</h2>
+    <p>
+      Faces are easier to track than formations. Half a dozen names from each side, briefly. Pick one or two at warm-up and follow them through the match.
+    </p>
+
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--pt-red-deep);">Portugal · Selecção das Quinas</h3>
+    <ul class="notes">
+      <li><strong>Cristiano Ronaldo · Forward · Al Nassr.</strong> <em class="accent">His sixth World Cup, very likely his last.</em> He is 41, moves slowly on purpose, and is at his most dangerous in the box. If he plays, watch what he does <strong>without the ball</strong>.</li>
+      <li><strong>Bernardo Silva · Midfielder · Manchester City.</strong> The quiet genius. Reads the field two passes ahead. If Portugal is settling into rhythm, Bernardo is the reason.</li>
+      <li><strong>Bruno Fernandes · Midfielder · Manchester United.</strong> The set-piece taker and the long-range shooter. Vocal on the pitch. Watch him conduct.</li>
+      <li><strong>Vitinha · Midfielder · PSG.</strong> Won the Champions League with PSG in 2025. The engine room behind Portugal's possession.</li>
+      <li><strong>Rúben Dias · Defender · Manchester City.</strong> Portugal's anchor in the back. Aerial. Talks to his back four all match.</li>
+      <li><strong>Diogo Costa · Goalkeeper · FC Porto.</strong> First-choice keeper. Watch how he distributes from goal kicks. Portugal's build-up starts here.</li>
+      <li><strong>Rafael Leão · Forward · AC Milan.</strong> The pace. If Portugal is breaking on the counter, Leão is the runner.</li>
+    </ul>
+
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--uz-blue-deep);">Uzbekistan · Oq Bo'rilar (White Wolves)</h3>
+    <ul class="notes">
+      <li><strong>Eldor Shomurodov · Captain · Forward · AS Roma.</strong> <em class="accent-uz">The face of Uzbekistan's first ever World Cup.</em> Their all-time leading scorer. Plays in Serie A. He is the player his country is watching.</li>
+      <li><strong>The starting goalkeeper.</strong> O'tkir Yusupov, Botirali Ergashev, or Abduvohid Ne'matov. Whichever one starts is making their World Cup debut in front of their country. Find the face during warm-up.</li>
+      <li><strong>Coach Fabio Cannavaro.</strong> Yes, that Cannavaro. World Cup winner with Italy in 2006 (he was Captain). Now coaching Uzbekistan in their first ever World Cup. The Italian fingerprints on their tactics will be the story to watch.</li>
+    </ul>
+  </section>
+
+  <!-- YOUR WEEK -->
+  <section>
+    <h2>Your week, day by day</h2>
+    <p>
+      A loose frame, adjust to your actual travel. The point is to land in Houston rested and to leave with the match still in your bones.
+    </p>
+
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--gold);">Sunday June 21 · Vancouver</h3>
+    <p>Pack the clear plastic bag (or buy one in Houston). Confirm your rideshare app is logged in. Print the ticket and have it in your phone wallet. Light day. Hydrate.</p>
+
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--gold);">Monday June 22 · Travel</h3>
+    <p>Fly to Houston. Both IAH (Bush Intercontinental) and HOU (Hobby) work; IAH is bigger and tends to have more Vancouver routing. Check in to your hotel. Decide tonight whether you want a calm dinner or to find the Portuguese pre-match crowd at OPORTO or Hugo's.</p>
+
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--gold);">Tuesday June 23 · Match day</h3>
+    <ul class="notes">
+      <li><strong>8:30 AM.</strong> Coffee and a pastry at Common Bond or anywhere in Montrose. Light breakfast.</li>
+      <li><strong>9:30 AM.</strong> Head toward NRG. METRORail Red Line if your hotel is Downtown or Midtown. Otherwise rideshare or pre-arranged.</li>
+      <li><strong>10:00 AM.</strong> Gates open. Clear security with your clear plastic bag and small clutch. Pace yourself, do not rush.</li>
+      <li><strong>10:30 to 11:30 AM.</strong> Find your seat. Watch warm-ups. Locate the Portuguese away end, locate the Uzbek section. Listen to both crowds.</li>
+      <li><strong>11:45 AM.</strong> Lineups announced. National anthems.</li>
+      <li><strong>12:00 PM CT.</strong> Kickoff.</li>
+      <li><strong>~1:50 PM.</strong> Final whistle.</li>
+      <li><strong>Afternoon.</strong> Stick around NRG for the wind-down or head back to Montrose. The diaspora bars will be loud either way.</li>
+    </ul>
+
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--gold);">Wednesday June 24 · Wrap or stay</h3>
+    <p>Fly home, or stay a day. Houston has Brazil vs Chile (Match 50) on the 27th if you stretch the trip, but no plan is required today.</p>
+
+    <p style="margin-top: 1.5rem; color: var(--ink-2); font-style: italic;">
+      If you want this tightened around your real flights and hotel, send me the details in the Ask Darby box below and I will rebuild it with your actual day.
+    </p>
+  </section>
+
+  <!-- ASK DARBY -->
+  <section class="ask" id="ask">
+    <h2>Ask anything. I will get an answer.</h2>
+    <p>
+      Type your question below. Tap send. Your phone opens a message to Gordon. He routes it to me, and we get back to you fast.
+      Tickets, hotels, food, the away-end vibe, what to wear, where to drink with your section, how to find a Portuguese bakery before kickoff. Anything.
+    </p>
+
+    <form id="ask-form" action="#" onsubmit="return sendAsk(event);">
+      <label for="q" style="position:absolute;left:-9999px;">Your question</label>
+      <textarea id="q" name="q" placeholder="Hi Gordon and Darby, my first question is…"></textarea>
+      <button type="submit" class="send" aria-label="Send to Gordon">
+        Send to Gordon <span class="arrow" aria-hidden="true">↗</span>
+      </button>
+      <div class="hint">Opens your Messages app to Gordon · +1 818 472 7283</div>
+    </form>
+  </section>
+
+  <footer>
+    Built for Laylah <span class="heart">♥</span> by Gordon and Darby · WC 26
+  </footer>
+
+</main>
+
+<script>
+function sendAsk(e) {
+  e.preventDefault();
+  var q = document.getElementById('q').value.trim();
+  var prefix = "Hi Gordon, this is Laylah. Question for Darby: ";
+  var body = q.length ? (prefix + q) : "Hi Gordon, this is Laylah. I have a question for Darby.";
+  var url = "sms:+18184727283?&body=" + encodeURIComponent(body);
+  window.location.href = url;
+  return false;
+}
+</script>
+</body>
+</html>
