@@ -364,6 +364,13 @@ footer .heart { color: var(--pt-red); }
   .vs { font-size: 1.4rem; }
   .group .row .flag { font-size: 1.6rem; }
 }
+/* ---------- Reveal motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+  .reveal.in { opacity: 1; transform: none; }
+  ul.notes li::before { transition: transform 0.3s var(--ease); }
+  ul.notes li:hover::before { transform: scale(1.5); }
+}
 </style>
 </head>
 <body>
@@ -404,7 +411,7 @@ footer .heart { color: var(--pt-red); }
       <div><strong>Tuesday, June 23, 2026</strong> · Kickoff <strong>12:00 PM CT</strong> (Houston local)</div>
       <div>NRG Stadium · Houston, Texas</div>
       <div id="countdown" class="countdown" aria-live="polite"></div>
-      <div style="margin-top: 10px; font-size: 0.8rem; opacity: 0.75;">This page is alive. Darby, Gordon's AI, re-checks the facts and updates it as tournament news lands, right up to match day. Latest refresh: <strong>June 10</strong> (Ronaldo confirmed in the squad, form guide added, your match-day checklist now remembers your taps).</div>
+      <div style="margin-top: 10px; font-size: 0.8rem; opacity: 0.75;">This page is alive. Darby, Gordon's AI, re-checks the facts and updates it as tournament news lands, right up to match day. Latest refresh: <strong>June 10</strong> (your extra-night plan with the hotel shortlist, a fresh round of facts you can deploy, and a new watching lesson in Soccer 101).</div>
     </div>
   </div>
 
@@ -418,6 +425,21 @@ footer .heart { color: var(--pt-red); }
       <li><strong>Uzbekistan's first World Cup, ever.</strong> Not the kind of first that comes around again. Every fan in white and blue in your section has waited their whole lives for this kickoff. You are inside a once-only moment for a country.</li>
       <li><strong>Ronaldo is in the squad. It's official.</strong> Portugal named him on May 19: his record sixth World Cup, as captain, at 41. No one has ever played in six. If he steps on that pitch, you watched him in person. That sentence is worth a lot more in ten years than it sounds today.</li>
       <li><strong>Houston is a hub of both diasporas.</strong> The Portuguese community in Texas runs deep. Uzbek expat networks across the South will travel in. The away end is going to feel like a wedding too, just bigger.</li>
+    </ul>
+  </section>
+
+  <!-- POCKET TRIVIA -->
+  <section>
+    <h2>Facts you can deploy</h2>
+    <p>
+      You've already been testing these on people (the Uzbekistan one landed, I heard). Here's a refill. Each of these is verified and tends to stop a dinner table.
+    </p>
+    <ul class="notes">
+      <li><strong>Uzbekistan has never been to a World Cup before this one.</strong> They qualified June 5, 2025 with a 0-0 draw against the UAE, the first Central Asian nation ever to make it. You already know this one. It's still your opener.</li>
+      <li><strong>Uzbekistan is one of only two doubly landlocked countries on Earth.</strong> Every country it borders is also landlocked. The only other one is Liechtenstein. (And no, it's not in the Middle East. It's Central Asia, north of Afghanistan. Capital: Tashkent.)</li>
+      <li><strong>No human has ever played in six World Cups.</strong> If Ronaldo steps on the pitch in front of you, you personally watched the record happen. That sentence appreciates in value every year.</li>
+      <li><strong>Your stadium is the only air-conditioned one you could ask for.</strong> NRG's 12,000-ton cooling system holds the inside around 72°F while Houston cooks outside. The players will feel it too. Fresh legs late in the match.</li>
+      <li><strong>This match is one of 104.</strong> The 2026 World Cup is the biggest ever: 48 teams, 3 countries, 16 host cities. And you're at one of the games where a nation's entire football history starts.</li>
     </ul>
   </section>
 
@@ -624,8 +646,17 @@ footer .heart { color: var(--pt-red); }
       <li data-k="c8"><strong>Afternoon.</strong> Stick around NRG for the wind-down or head back to Montrose. The diaspora bars will be loud either way.</li>
     </ul>
 
-    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--gold);">Wednesday June 24 · Wrap or stay</h3>
-    <p>Fly home, or stay a day with no plan required. If you're still curious where Group K goes next: Portugal meets Colombia in Miami on June 27 while Congo DR and Uzbekistan close out in Atlanta the same day, and the EaDo Fan Festival screens it all for free.</p>
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--gold);">Wednesday June 24 · Your extra night</h3>
+    <p>You asked about extending, so this day got its own plan. The short version from our text thread: <strong>spend the bonus night downtown, not by NRG.</strong> The stadium district goes quiet the day after a match, but the FIFA Fan Festival in EaDo runs on every match day of the tournament. Free entry, giant screens, food, live music, and whatever matches are on that day playing on the big boards.</p>
+    <ul class="notes">
+      <li><strong>C. Baldwin, Downtown.</strong> My top pick. Rooftop pool, Theater District, walkable to everything. Roughly $200 to $260 USD.</li>
+      <li><strong>Marriott Marquis, Downtown.</strong> The splurge play. The rooftop pool is a lazy river shaped like Texas. You float in the state you conquered. $250 to $500 USD.</li>
+      <li><strong>Hotel ZaZa, Museum District.</strong> The wildcard. Design hotel with a pool, between downtown and NRG, next to Hermann Park and the museums. About $250 to $350 USD.</li>
+    </ul>
+    <p>Tell me which way you're leaning and I'll check live rates and availability for your exact night.</p>
+
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--gold);">Thursday June 25 · Fly home</h3>
+    <p>Home to Vancouver with the match still in your bones. If you're still curious where Group K goes next: Portugal meets Colombia in Miami on June 27 while Congo DR and Uzbekistan close out in Atlanta the same day.</p>
 
     <p style="margin-top: 1.5rem; color: var(--ink-2); font-style: italic;">
       If you want this tightened around your real flights and hotel, send me the details in the Ask Darby box below and I will rebuild it with your actual day.
@@ -658,7 +689,8 @@ footer .heart { color: var(--pt-red); }
     <ul class="notes">
       <li><strong>A great touch.</strong> When a player receives a pass and keeps the ball glued close in one motion. The crowd reacts even though nothing was scored.</li>
       <li><strong>A switch of play.</strong> A long pass from one side of the pitch to the other. Forces the defense to scramble. Often opens up a chance.</li>
-      <li><strong>The press.</strong> When a team chases the ball as a unit, trying to win it back high up the field. Looks like organized panic. It is actually one of the most coordinated things on a pitch.</li>
+      <li><strong>The press.</strong> When a team chases the ball as a unit, trying to win it back high up the field. Looks like organized panic. It is actually one of the most coordinated things on a pitch. (You know this one from our texts. It's lesson one for a reason.)</li>
+      <li><strong>A defender's first touch.</strong> Watch a defender the moment a pass travels toward them. The best ones look up BEFORE the ball arrives. They've already mapped the whole field by the time they touch it. Quiet, beautiful skill that nobody talks about.</li>
       <li><strong>A long ball over the top.</strong> A chip behind the defense for a forward to run onto. When it works, a goal-scoring chance in two seconds.</li>
       <li><strong>A clean tackle.</strong> A defender winning the ball back without fouling. Old-school crowds cheer these like goals.</li>
     </ul>
@@ -683,9 +715,9 @@ footer .heart { color: var(--pt-red); }
 
     <h3>Players to track</h3>
     <ul class="notes">
-      <li><strong>Cristiano Ronaldo</strong> (Portugal, #7) — the headline. Watch him on free kicks, and watch him drift into the box for crosses. Possibly his last World Cup.</li>
-      <li><strong>Bernardo Silva</strong> (Portugal, midfield) — the ball seems magnetized to his foot. Smaller, quieter, always involved. The connoisseur's favorite.</li>
-      <li><strong>Eldor Shomurodov</strong> (Uzbekistan, striker and captain) — the best-known Uzbek player and their all-time top scorer. The one most likely to score the historic first.</li>
+      <li><strong>Cristiano Ronaldo</strong> (Portugal, #7). the headline. Watch him on free kicks, and watch him drift into the box for crosses. Possibly his last World Cup.</li>
+      <li><strong>Bernardo Silva</strong> (Portugal, midfield). the ball seems magnetized to his foot. Smaller, quieter, always involved. The connoisseur's favorite.</li>
+      <li><strong>Eldor Shomurodov</strong> (Uzbekistan, striker and captain). the best-known Uzbek player and their all-time top scorer. The one most likely to score the historic first.</li>
     </ul>
 
     <h3>Things to feel for, not just see</h3>
@@ -767,6 +799,19 @@ function sendAsk(e) {
   window.location.href = url;
   return false;
 }
+
+(function () {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll("section, .match").forEach(function (el) {
+    el.classList.add("reveal");
+    io.observe(el);
+  });
+})();
 </script>
 </body>
 </html>
