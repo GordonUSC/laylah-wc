@@ -364,6 +364,25 @@ footer .heart { color: var(--pt-red); }
   .vs { font-size: 1.4rem; }
   .group .row .flag { font-size: 1.6rem; }
 }
+/* ---------- Figures ---------- */
+.figure { margin: 1.6rem 0 0.4rem; }
+.figure img {
+  display: block;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 16px 36px rgba(26, 18, 6, 0.14);
+}
+.figure.crop img { aspect-ratio: 16 / 10; object-fit: cover; }
+.figure figcaption {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-top: 0.6rem;
+}
+.figure figcaption .cr { float: right; opacity: 0.65; }
+
 /* ---------- Reveal motion ---------- */
 @media (prefers-reduced-motion: no-preference) {
   .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
@@ -411,7 +430,7 @@ footer .heart { color: var(--pt-red); }
       <div><strong>Tuesday, June 23, 2026</strong> · Kickoff <strong>12:00 PM CT</strong> (Houston local)</div>
       <div>NRG Stadium · Houston, Texas</div>
       <div id="countdown" class="countdown" aria-live="polite"></div>
-      <div style="margin-top: 10px; font-size: 0.8rem; opacity: 0.75;">This page is alive. Darby, Gordon's AI, re-checks the facts and updates it as tournament news lands, right up to match day. Latest refresh: <strong>June 10</strong> (your extra-night plan with the hotel shortlist, a fresh round of facts you can deploy, and a new watching lesson in Soccer 101).</div>
+      <div style="margin-top: 10px; font-size: 0.8rem; opacity: 0.75;">This page is alive. Darby, Gordon's AI, re-checks the facts and updates it as tournament news lands, right up to match day. Latest refresh: <strong>June 10</strong> (your extra-night plan with the hotel shortlist, a fresh round of facts you can deploy, a new watching lesson in Soccer 101, and photos: NRG full, downtown Houston, Tashkent at night).</div>
     </div>
   </div>
 
@@ -441,6 +460,10 @@ footer .heart { color: var(--pt-red); }
       <li><strong>Your stadium is the only air-conditioned one you could ask for.</strong> NRG's 12,000-ton cooling system holds the inside around 72°F while Houston cooks outside. The players will feel it too. Fresh legs late in the match.</li>
       <li><strong>This match is one of 104.</strong> The 2026 World Cup is the biggest ever: 48 teams, 3 countries, 16 host cities. And you're at one of the games where a nation's entire football history starts.</li>
     </ul>
+    <figure class="figure crop">
+      <img src="assets/tashkent.jpg" alt="Tashkent City park glowing at night" loading="lazy">
+      <figcaption>Tashkent at night. The capital your section's away fans flew from. <span class="cr">Photo Yorqulov Husan · CC BY 4.0 · Wikimedia Commons</span></figcaption>
+    </figure>
   </section>
 
   <!-- THE GROUP -->
@@ -494,6 +517,10 @@ footer .heart { color: var(--pt-red); }
       NRG Stadium is the host venue, and here is your best flex of the week: of all 16 World Cup stadiums, <strong>NRG is one of only three with full air conditioning</strong> (Houston, Dallas, and Atlanta; everyone else sweats). Retractable roof, a 12,000-ton cooling system, interior held around 72°F. You drew one of the comfortable tickets in the entire tournament.
       A bonus detail worth knowing. Portugal also plays Congo DR at NRG on <strong>June 17</strong>, six days before your match. The Portuguese travelling support will already know NRG by the time you walk in. The away end on the 23rd will feel rehearsed.
     </p>
+    <figure class="figure">
+      <img src="assets/nrg.jpg" alt="Inside NRG Stadium at full capacity, a giant Texas flag stretched across one end" loading="lazy">
+      <figcaption>NRG Stadium, full house. Your June 23 office. <span class="cr">Photo eschipul · CC BY-SA 2.0 · Wikimedia Commons</span></figcaption>
+    </figure>
     <p>
       If you want the free, no-ticket version of the tournament while you're in town, the official <strong>FIFA Fan Festival sits in EaDo</strong> (East Downtown), four blocks of screens and food running nearly every day of the tournament. Good landing spot the night you arrive.
     </p>
@@ -648,6 +675,10 @@ footer .heart { color: var(--pt-red); }
 
     <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--gold);">Wednesday June 24 · Your extra night</h3>
     <p>You asked about extending, so this day got its own plan. The short version from our text thread: <strong>spend the bonus night downtown, not by NRG.</strong> The stadium district goes quiet the day after a match, but the FIFA Fan Festival in EaDo runs on every match day of the tournament. Free entry, giant screens, food, live music, and whatever matches are on that day playing on the big boards.</p>
+    <figure class="figure">
+      <img src="assets/houston.jpg" alt="Downtown Houston skyline lit up at night" loading="lazy">
+      <figcaption>Downtown Houston at night, where the bonus night lives. <span class="cr">Photo Bobby L. Warren · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption>
+    </figure>
     <ul class="notes">
       <li><strong>Marriott Marquis, Downtown.</strong> The new top pick, because you said pool and this is THE pool: a rooftop lazy river shaped like Texas. You float in the state you conquered. $250 to $500 USD.</li>
       <li><strong>Hotel ZaZa, Museum District.</strong> The stylish play. Design hotel with a real pool scene, between downtown and NRG, next to Hermann Park and the museums. About $250 to $350 USD.</li>
