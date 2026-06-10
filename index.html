@@ -181,6 +181,15 @@ h2 {
   letter-spacing: -0.01em;
   margin: 0 0 1rem;
 }
+h3 {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(1.15rem, 4.8vw, 1.35rem);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin: 1.75rem 0 0.5rem;
+  color: var(--ink);
+}
 
 p { margin: 0 0 1rem; }
 p:last-child { margin-bottom: 0; }
@@ -301,6 +310,40 @@ ul.notes li::before {
   text-align: center;
 }
 
+/* ---------- Countdown ---------- */
+.countdown {
+  margin-top: 0.35rem;
+  font-family: var(--f-mono);
+  font-size: 13px;
+  letter-spacing: 0.10em;
+  color: var(--pt-red-deep);
+}
+.countdown strong { color: var(--pt-red-deep); font-weight: 600; }
+
+/* ---------- Checklist ---------- */
+ul.checklist li { cursor: pointer; transition: opacity 200ms var(--ease); padding-left: 2rem; }
+ul.checklist li::before {
+  width: 18px; height: 18px;
+  top: 0.7rem;
+  border-radius: 6px;
+  background: #fff;
+  border: 1.5px solid var(--gold);
+  box-shadow: none;
+}
+ul.checklist li.done { opacity: 0.45; }
+ul.checklist li.done::before {
+  background: var(--gold);
+  content: "";
+}
+ul.checklist li.done::after {
+  content: "✓";
+  position: absolute;
+  left: 3px; top: 0.55rem;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
 /* ---------- Footer ---------- */
 footer {
   margin-top: 3rem;
@@ -333,7 +376,7 @@ footer .heart { color: var(--pt-red); }
 
   <p class="lede">
     Years ago, a quiet girl rode her scooter into a park hoping someone her age would say hi. Mel did.
-    From that hello to last night, when you stood next to her as her best woman, that is the arc. Day 1, literally.
+    From that hello to May 30, when you stood next to her as her best woman, that is the arc. Day 1, literally.
   </p>
 
   <p class="lede">
@@ -360,6 +403,7 @@ footer .heart { color: var(--pt-red); }
       <div><strong>Match 47</strong> · Group K · World Cup 2026</div>
       <div><strong>Tuesday, June 23, 2026</strong> · Kickoff <strong>12:00 PM CT</strong> (Houston local)</div>
       <div>NRG Stadium · Houston, Texas</div>
+      <div id="countdown" class="countdown" aria-live="polite"></div>
     </div>
   </div>
 
@@ -371,7 +415,7 @@ footer .heart { color: var(--pt-red); }
     </p>
     <ul class="notes">
       <li><strong>Uzbekistan's first World Cup, ever.</strong> Not the kind of first that comes around again. Every fan in white and blue in your section has waited their whole lives for this kickoff. You are inside a once-only moment for a country.</li>
-      <li><strong>Possibly Ronaldo's final World Cup.</strong> The reporting points to this being his last dance with Portugal. If he plays, you watched him in person. That sentence is worth a lot more in ten years than it sounds today.</li>
+      <li><strong>Ronaldo is in the squad. It's official.</strong> Portugal named him on May 19: his record sixth World Cup, as captain, at 41. No one has ever played in six. If he steps on that pitch, you watched him in person. That sentence is worth a lot more in ten years than it sounds today.</li>
       <li><strong>Houston is a hub of both diasporas.</strong> The Portuguese community in Texas runs deep. Uzbek expat networks across the South will travel in. The away end is going to feel like a wedding too, just bigger.</li>
     </ul>
   </section>
@@ -409,12 +453,26 @@ footer .heart { color: var(--pt-red); }
     </p>
   </section>
 
+  <!-- FORM GUIDE -->
+  <section>
+    <h2>The form guide, two weeks out</h2>
+    <p>Checked against the wire on June 10. Three things shape your match:</p>
+    <ul class="notes">
+      <li><strong>Portugal beat Chile 2-1 in their June 6 send-off friendly</strong> (Gonçalo Guedes and Bruno Fernandes scored). One cloud: Rafael Leão was sent off for violent conduct in that match, and whether any ban touches the World Cup was still unresolved when this page was updated. If Leão isn't in the lineup on the 23rd, that's why.</li>
+      <li><strong>Uzbekistan lost both warm-ups</strong>, 0-2 to Canada and 1-2 to the Netherlands, playing a compact 5-4-1. Translation for your seat: expect Uzbekistan to defend deep with everyone behind the ball, and Portugal to camp in their half. Set pieces and patience decide games like that.</li>
+      <li><strong>Portugal arrive as reigning Nations League champions</strong>, ranked #5 in the world, under coach Roberto Martínez. The gap on paper is enormous. That is exactly the kind of match where a debutant nation's one big moment echoes forever.</li>
+    </ul>
+  </section>
+
   <!-- HOUSTON -->
   <section>
     <h2>Houston, the city</h2>
     <p>
-      NRG Stadium is the host venue. Climate-controlled, which Texas in late June demands.
+      NRG Stadium is the host venue, and here is your best flex of the week: of all 16 World Cup stadiums, <strong>NRG is the only one with air conditioning</strong>. Retractable roof, a 12,000-ton cooling system, interior held around 72°F. You drew the comfortable ticket in the entire tournament.
       A bonus detail worth knowing. Portugal also plays Congo DR at NRG on <strong>June 17</strong>, six days before your match. The Portuguese travelling support will already know NRG by the time you walk in. The away end on the 23rd will feel rehearsed.
+    </p>
+    <p>
+      If you want the free, no-ticket version of the tournament while you're in town, the official <strong>FIFA Fan Festival sits in EaDo</strong> (East Downtown), four blocks of screens and food running nearly every day of the tournament. Good landing spot the night you arrive.
     </p>
     <p>
       The match-day vibe in Houston will spill across downtown, Midtown, and the Montrose stretch. You will not need to plan every meal and bar in advance. Houston rewards wandering. Tell me what you like, and I will build you a short list, not a long one.
@@ -466,12 +524,12 @@ footer .heart { color: var(--pt-red); }
       NRG enforces the FIFA clear bag policy. You can bring <strong>one clear plastic bag, no larger than 12 by 6 by 12 inches</strong> (a standard one-gallon freezer bag works), <strong>plus one small clutch no larger than 4.5 by 6.5 inches.</strong>
     </p>
     <p>
-      <strong>What is not allowed:</strong> backpacks, purses, fanny packs, camera bags, anything opaque. There is <strong>no bag storage at any World Cup 2026 venue.</strong> If you arrive with a prohibited bag, you will need to return to your vehicle or hotel. Plan ahead. Leave anything you do not need at the hotel.
+      <strong>What is not allowed:</strong> backpacks, purses, fanny packs, camera bags, anything opaque. There is <strong>no bag storage at any World Cup 2026 venue.</strong> If you arrive with a prohibited bag, you will need to return to your vehicle or hotel. Plan ahead. Leave anything you do not need at the hotel. One mercy: <strong>sealed water bottles of 20 oz or less are allowed in</strong>, and empties can be refilled inside.
     </p>
 
     <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--pt-red-deep);">Weather</h3>
     <p>
-      Houston in late June is hot and humid. Outside climbs past 95°F by midday. <strong>NRG Stadium is climate-controlled.</strong> Inside is comfortable. The walk from the rail station or the rideshare drop-off is where the heat lives. Sunscreen, water, light layers. Hydrate on the way in.
+      Houston in late June runs near 90°F with humidity that makes it feel well past that, and June 21 to 30 is statistically the city's steamiest stretch. <strong>Inside, NRG is air conditioned to about 72°F</strong>, the only World Cup venue that can say that. The walk from the rail station or the rideshare drop-off is where the heat lives. Sunscreen, water, light layers. Hydrate on the way in.
     </p>
   </section>
 
@@ -519,19 +577,22 @@ footer .heart { color: var(--pt-red); }
 
     <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--pt-red-deep);">Portugal · Selecção das Quinas</h3>
     <ul class="notes">
-      <li><strong>Cristiano Ronaldo · Forward · Al Nassr.</strong> <em class="accent">His sixth World Cup, very likely his last.</em> He is 41, moves slowly on purpose, and is at his most dangerous in the box. If he plays, watch what he does <strong>without the ball</strong>.</li>
+      <li><strong>Cristiano Ronaldo · Captain · Forward · Al Nassr.</strong> <em class="accent">His record sixth World Cup, named to the squad May 19.</em> He is 41, moves slowly on purpose, and is at his most dangerous in the box. If he plays, watch what he does <strong>without the ball</strong>.</li>
       <li><strong>Bernardo Silva · Midfielder · Manchester City.</strong> The quiet genius. Reads the field two passes ahead. If Portugal is settling into rhythm, Bernardo is the reason.</li>
       <li><strong>Bruno Fernandes · Midfielder · Manchester United.</strong> The set-piece taker and the long-range shooter. Vocal on the pitch. Watch him conduct.</li>
       <li><strong>Vitinha · Midfielder · PSG.</strong> Won the Champions League with PSG in 2025. The engine room behind Portugal's possession.</li>
       <li><strong>Rúben Dias · Defender · Manchester City.</strong> Portugal's anchor in the back. Aerial. Talks to his back four all match.</li>
       <li><strong>Diogo Costa · Goalkeeper · FC Porto.</strong> First-choice keeper. Watch how he distributes from goal kicks. Portugal's build-up starts here.</li>
-      <li><strong>Rafael Leão · Forward · AC Milan.</strong> The pace. If Portugal is breaking on the counter, Leão is the runner.</li>
+      <li><strong>Rafael Leão · Forward · AC Milan.</strong> The pace. If Portugal is breaking on the counter, Leão is the runner. (Carrying a red card from the June 6 friendly; his availability was the open question when this page went out.)</li>
+      <li><strong>Roberto Martínez · Coach.</strong> The Spaniard who delivered Portugal's 2025 Nations League title. Watch the touchline when Portugal can't break the low block down.</li>
     </ul>
 
     <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--uz-blue-deep);">Uzbekistan · Oq Bo'rilar (White Wolves)</h3>
     <ul class="notes">
-      <li><strong>Eldor Shomurodov · Captain · Forward · AS Roma.</strong> <em class="accent-uz">The face of Uzbekistan's first ever World Cup.</em> Their all-time leading scorer. Plays in Serie A. He is the player his country is watching.</li>
-      <li><strong>The starting goalkeeper.</strong> O'tkir Yusupov, Botirali Ergashev, or Abduvohid Ne'matov. Whichever one starts is making their World Cup debut in front of their country. Find the face during warm-up.</li>
+      <li><strong>Eldor Shomurodov · Captain · Forward · Istanbul Başakşehir, on loan from Roma.</strong> <em class="accent-uz">The face of Uzbekistan's first ever World Cup.</em> Their all-time leading scorer with 44 goals. He is the player his country is watching.</li>
+      <li><strong>Abdukodir Khusanov · Defender · Manchester City.</strong> The first Uzbek ever to play in the Premier League, and the man whose job is keeping Ronaldo quiet. If Uzbekistan survives the first half, he is the reason.</li>
+      <li><strong>Abbosbek Fayzullaev · Midfielder.</strong> The young creator. When Uzbekistan finally breaks out of their own half, the ball goes through him.</li>
+      <li><strong>The starting goalkeeper.</strong> Whoever starts is making their World Cup debut in front of their country. Find the face during warm-up.</li>
       <li><strong>Coach Fabio Cannavaro.</strong> Yes, that Cannavaro. World Cup winner with Italy in 2006 (he was Captain). Now coaching Uzbekistan in their first ever World Cup. The Italian fingerprints on their tactics will be the story to watch.</li>
     </ul>
   </section>
@@ -550,22 +611,94 @@ footer .heart { color: var(--pt-red); }
     <p>Fly to Houston. Both IAH (Bush Intercontinental) and HOU (Hobby) work; IAH is bigger and tends to have more Vancouver routing. Check in to your hotel. Decide tonight whether you want a calm dinner or to find the Portuguese pre-match crowd at OPORTO or Hugo's.</p>
 
     <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--gold);">Tuesday June 23 · Match day</h3>
-    <ul class="notes">
-      <li><strong>8:30 AM.</strong> Coffee and a pastry at Common Bond or anywhere in Montrose. Light breakfast.</li>
-      <li><strong>9:30 AM.</strong> Head toward NRG. METRORail Red Line if your hotel is Downtown or Midtown. Otherwise rideshare or pre-arranged.</li>
-      <li><strong>10:00 AM.</strong> Gates open. Clear security with your clear plastic bag and small clutch. Pace yourself, do not rush.</li>
-      <li><strong>10:30 to 11:30 AM.</strong> Find your seat. Watch warm-ups. Locate the Portuguese away end, locate the Uzbek section. Listen to both crowds.</li>
-      <li><strong>11:45 AM.</strong> Lineups announced. National anthems.</li>
-      <li><strong>12:00 PM CT.</strong> Kickoff.</li>
-      <li><strong>~1:50 PM.</strong> Final whistle.</li>
-      <li><strong>Afternoon.</strong> Stick around NRG for the wind-down or head back to Montrose. The diaspora bars will be loud either way.</li>
+    <p style="font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mute);">Tap each step as you live it. The page remembers.</p>
+    <ul class="notes checklist" id="matchday">
+      <li data-k="c1"><strong>8:30 AM.</strong> Coffee and a pastry at Common Bond or anywhere in Montrose. Light breakfast.</li>
+      <li data-k="c2"><strong>9:30 AM.</strong> Head toward NRG. METRORail Red Line if your hotel is Downtown or Midtown. Otherwise rideshare or pre-arranged.</li>
+      <li data-k="c3"><strong>10:00 AM.</strong> Gates open. Clear security with your clear plastic bag and small clutch. Pace yourself, do not rush.</li>
+      <li data-k="c4"><strong>10:30 to 11:30 AM.</strong> Find your seat. Watch warm-ups. Locate the Portuguese away end, locate the Uzbek section. Listen to both crowds.</li>
+      <li data-k="c5"><strong>11:45 AM.</strong> Lineups announced. National anthems.</li>
+      <li data-k="c6"><strong>12:00 PM CT.</strong> Kickoff.</li>
+      <li data-k="c7"><strong>~1:50 PM.</strong> Final whistle.</li>
+      <li data-k="c8"><strong>Afternoon.</strong> Stick around NRG for the wind-down or head back to Montrose. The diaspora bars will be loud either way.</li>
     </ul>
 
     <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--gold);">Wednesday June 24 · Wrap or stay</h3>
-    <p>Fly home, or stay a day. Houston has Brazil vs Chile (Match 50) on the 27th if you stretch the trip, but no plan is required today.</p>
+    <p>Fly home, or stay a day with no plan required. If you're still curious where Group K goes next: Portugal meets Colombia in Miami on June 27 while Congo DR and Uzbekistan close out in Atlanta the same day, and the EaDo Fan Festival screens it all for free.</p>
 
     <p style="margin-top: 1.5rem; color: var(--ink-2); font-style: italic;">
       If you want this tightened around your real flights and hotel, send me the details in the Ask Darby box below and I will rebuild it with your actual day.
+    </p>
+  </section>
+
+  <!-- SOCCER 101 -->
+  <section>
+    <h2>Soccer 101, the things to look for</h2>
+    <p>
+      No quiz. Just a few digestible things that turn watching from confusing into thrilling. Read once before kickoff and you will feel like soccer has been your sport for years.
+    </p>
+
+    <h3>The shape of the game</h3>
+    <ul class="notes">
+      <li><strong>90 minutes</strong>, two halves of 45, plus a few minutes of "stoppage time" the ref adds at the end of each half. The clock never stops once play starts.</li>
+      <li><strong>11 vs 11</strong>, including a goalkeeper. The other ten are split into defenders, midfielders, and forwards. The split is called the "formation."</li>
+      <li>Subs are limited (five per team across three windows). Once a player is out, they don't come back. So late-game energy is real.</li>
+    </ul>
+
+    <h3>Vocabulary you will hear</h3>
+    <ul class="notes">
+      <li><strong>Pitch</strong> is the field.</li>
+      <li><strong>The box</strong> is the large rectangle in front of each goal. A foul on an attacker inside the box gives that team a penalty kick. Huge moment.</li>
+      <li><strong>Touchline</strong> is the long sideline. <strong>Goal line</strong> is the short one under each goal.</li>
+      <li><strong>Stoppage time</strong> is the bonus minutes added at the end of each half.</li>
+    </ul>
+
+    <h3>What to look for moment to moment</h3>
+    <ul class="notes">
+      <li><strong>A great touch.</strong> When a player receives a pass and keeps the ball glued close in one motion. The crowd reacts even though nothing was scored.</li>
+      <li><strong>A switch of play.</strong> A long pass from one side of the pitch to the other. Forces the defense to scramble. Often opens up a chance.</li>
+      <li><strong>The press.</strong> When a team chases the ball as a unit, trying to win it back high up the field. Looks like organized panic. It is actually one of the most coordinated things on a pitch.</li>
+      <li><strong>A long ball over the top.</strong> A chip behind the defense for a forward to run onto. When it works, a goal-scoring chance in two seconds.</li>
+      <li><strong>A clean tackle.</strong> A defender winning the ball back without fouling. Old-school crowds cheer these like goals.</li>
+    </ul>
+
+    <h3>The rule everyone asks about: offside</h3>
+    <p>
+      Simple version. At the exact moment your teammate passes the ball, you have to be either level with, or behind, the second-to-last defender (which is usually the last outfield defender, since the goalkeeper is the very last). If you are past that line when the pass starts, the play is whistled off.
+    </p>
+    <p>
+      Why it exists: without it, forwards would just camp next to the goalkeeper waiting for long passes, and the game would turn into catch.
+    </p>
+
+    <h3>Why goals are precious</h3>
+    <p>
+      Most matches end 0-0, 1-0, 1-1, or 2-1. Every single goal flips the energy of the game. That is why grown adults cry. For your match, expect Portugal to push for goals and Uzbekistan to defend with everyone behind the ball. Any Uzbek goal will detonate that side of the stadium, because of <em class="accent-uz">what it would mean for their first World Cup ever</em>.
+    </p>
+
+    <h3>The stakes of Group K</h3>
+    <p>
+      Top 2 finishers from each group, plus the best third-place finishers, advance to the knockout round. So this is do-or-die territory for Uzbekistan. Portugal will most likely win, but the question is how it plays out, and whether Uzbekistan can take a moment that travels home with them forever.
+    </p>
+
+    <h3>Players to track</h3>
+    <ul class="notes">
+      <li><strong>Cristiano Ronaldo</strong> (Portugal, #7) — the headline. Watch him on free kicks, and watch him drift into the box for crosses. Possibly his last World Cup.</li>
+      <li><strong>Bernardo Silva</strong> (Portugal, midfield) — the ball seems magnetized to his foot. Smaller, quieter, always involved. The connoisseur's favorite.</li>
+      <li><strong>Eldor Shomurodov</strong> (Uzbekistan, striker and captain) — the best-known Uzbek player and their all-time top scorer. The one most likely to score the historic first.</li>
+    </ul>
+
+    <h3>Things to feel for, not just see</h3>
+    <ul class="notes">
+      <li>The hum of the crowd before kickoff.</li>
+      <li>The first time the away end starts singing in unison.</li>
+      <li>The hush before a free kick from a dangerous spot.</li>
+      <li>The one-second pause before the stadium realizes a goal is in.</li>
+      <li>The shape shift if a team scores: do they push for more, or sit back?</li>
+    </ul>
+
+    <h3>The Day-1 angle</h3>
+    <p>
+      Soccer is best watched with someone you trust to whisper observations to in real time. Mel did exactly that for you in a park decades ago. Said hi. Changed the chemistry of the moment. The match in Houston is just another version of that. Be there together, notice what feels right, ask each other what is actually happening. The game makes more sense when you talk through it.
     </p>
   </section>
 
@@ -588,12 +721,41 @@ footer .heart { color: var(--pt-red); }
   </section>
 
   <footer>
-    Built for Laylah <span class="heart">♥</span> by Gordon and Darby · WC 26
+    Built for Laylah <span class="heart">♥</span> by Gordon and Darby · WC 26<br />
+    <span style="letter-spacing: 0.08em;">Facts re-verified June 10, 2026 against FIFA, ESPN, federation and ticketing sources</span>
   </footer>
 
 </main>
 
 <script>
+(function () {
+  var kickoff = new Date("2026-06-23T12:00:00-05:00");
+  var el = document.getElementById("countdown");
+  function tick() {
+    var ms = kickoff - new Date();
+    if (ms <= 0 && ms > -7.2e6) { el.innerHTML = "<strong>It's on. Enjoy every minute.</strong>"; return; }
+    if (ms <= -7.2e6) { el.innerHTML = "<strong>You were there.</strong>"; return; }
+    var d = Math.floor(ms / 86400000);
+    var h = Math.floor(ms % 86400000 / 3600000);
+    var m = Math.floor(ms % 3600000 / 60000);
+    el.innerHTML = "Kickoff in <strong>" + d + "d " + h + "h " + m + "m</strong>";
+  }
+  tick();
+  setInterval(tick, 30000);
+
+  var list = document.getElementById("matchday");
+  if (list) {
+    Array.prototype.forEach.call(list.querySelectorAll("li"), function (li) {
+      var k = "laylah-" + li.getAttribute("data-k");
+      try { if (localStorage.getItem(k) === "1") li.classList.add("done"); } catch (e) {}
+      li.addEventListener("click", function () {
+        li.classList.toggle("done");
+        try { localStorage.setItem(k, li.classList.contains("done") ? "1" : "0"); } catch (e) {}
+      });
+    });
+  }
+})();
+
 function sendAsk(e) {
   e.preventDefault();
   var q = document.getElementById('q').value.trim();
