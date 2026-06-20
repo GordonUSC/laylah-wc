@@ -398,6 +398,23 @@ footer .heart { color: var(--pt-red); }
 :focus-visible{ outline:3px solid var(--gold,#C8962B); outline-offset:3px; border-radius:6px; }
 [class*="card"]{ transition: transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s ease; }
 [class*="card"]:hover{ transform: translateY(-3px); }
+
+/* ---------- Match-day run of show ---------- */
+.ros { display: grid; gap: 0.6rem; margin: 0.5rem 0 1rem; }
+.ros details { border: 1px solid var(--hair); border-left: 3px solid var(--gold); border-radius: 14px; background: linear-gradient(180deg,#fff,var(--bg-2)); overflow: hidden; }
+.ros details[open] { box-shadow: 0 12px 30px -22px rgba(27,18,8,0.3); }
+.ros summary { list-style: none; cursor: pointer; padding: 0.9rem 1rem; display: flex; gap: 0.9rem; align-items: center; }
+.ros summary::-webkit-details-marker { display: none; }
+.ros summary .time { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.06em; color: var(--pt-red-deep); font-weight: 500; min-width: 78px; }
+.ros summary .what { font-family: var(--f-display); font-size: 1.1rem; font-weight: 600; line-height: 1.15; }
+.ros summary .chev { margin-left: auto; color: var(--gold); transition: transform .25s var(--ease); }
+.ros details[open] summary .chev { transform: rotate(90deg); }
+.ros .ros-body { padding: 0 1rem 1rem 1rem; }
+.ros .ros-row { display: grid; grid-template-columns: 86px 1fr; gap: 0.3rem 0.9rem; font-size: 0.92rem; padding: 0.5rem 0; border-top: 1px dashed var(--hair-2); }
+.ros .ros-row .k { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); padding-top: 2px; }
+.ros .cnote { background: var(--gold-soft); border-radius: 10px; padding: 0.7rem 0.85rem; margin-top: 0.7rem; font-size: 0.9rem; line-height: 1.5; }
+.ros .cnote b { color: var(--pt-red-deep); }
+@media (max-width: 480px){ .ros .ros-row { grid-template-columns: 1fr; gap: 0.1rem; } .ros summary .time { min-width: auto; } }
 </style>
 </head>
 <body>
@@ -602,6 +619,69 @@ footer .heart { color: var(--pt-red); }
     <p>
       Houston in late June runs near 90°F with humidity that makes it feel well past that, and June 21 to 30 is statistically the city's steamiest stretch. <strong>Inside, NRG is air conditioned to about 72°F</strong>, one of only three World Cup venues that can say that. The walk from the rail station or the rideshare drop-off is where the heat lives. Sunscreen, water, light layers. Hydrate on the way in.
     </p>
+  </section>
+
+  <!-- RUN OF SHOW -->
+  <section>
+    <h2>Your match day, hour by hour</h2>
+    <p>Tap any step for the detail. A concierge note on each, for the moment it matters most.</p>
+    <div class="ros">
+      <details>
+        <summary><span class="time">8:30 AM</span><span class="what">Coffee and a light breakfast</span><span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ros-body">
+          <div class="ros-row"><span class="k">Where</span><span>Common Bond or anywhere in Montrose. A custard tart will feel right.</span></div>
+          <div class="ros-row"><span class="k">Why light</span><span>Kickoff is noon. You want fuel, not a food coma, before a day on your feet.</span></div>
+          <div class="cnote"><b>Concierge note:</b> start hydrating now. Houston humidity is the opponent before the whistle.</div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="time">9:30 AM</span><span class="what">Head to NRG from 7710 Main</span><span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ros-body">
+          <div class="ros-row"><span class="k">Best way</span><span>Walk it (~20 min south, fine in the morning) or take the METRORail Red Line one or two stops to NRG Park. $1.25, trains every 6 minutes.</span></div>
+          <div class="ros-row"><span class="k">Skip</span><span>No downtown traffic, no parking scramble. This is the whole advantage of where you're staying.</span></div>
+          <div class="cnote"><b>Concierge note:</b> the walk or the platform is where the heat lives. Sunscreen and water in hand, it is 72°F waiting inside.</div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="time">By 10:30</span><span class="what">Clear security, into the stadium</span><span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ros-body">
+          <div class="ros-row"><span class="k">Gates</span><span>Open around 9 AM (FIFA opens up to three hours early). No rush, but earlier is calmer.</span></div>
+          <div class="ros-row"><span class="k">Your bag</span><span>One clear plastic bag (12 x 6 x 12 in or smaller) plus one small clutch (4.5 x 6.5 in). Nothing opaque. No bag storage anywhere.</span></div>
+          <div class="ros-row"><span class="k">Allowed</span><span>One sealed water bottle, 20 oz or under. Refill the empty inside.</span></div>
+          <div class="cnote"><b>Concierge note:</b> the clear-bag rule is the one thing people get wrong. Pack it the night before so the gate is a non-event.</div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="time">10:30–11:30</span><span class="what">Find your seat, watch warm-ups</span><span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ros-body">
+          <div class="ros-row"><span class="k">Look for</span><span>The Portuguese end in red and green, and the Uzbek section in white and blue. You are inside both diasporas at once.</span></div>
+          <div class="ros-row"><span class="k">One face</span><span>Uzbekistan's goalkeeper, making a World Cup debut for a nation that has never been here. Find him during warm-ups.</span></div>
+          <div class="cnote"><b>Concierge note:</b> this hour is the secret best part. The building filling, both anthems coming, the nerves. Arrive in time to feel it.</div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="time">11:45 AM</span><span class="what">Lineups and anthems</span><span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ros-body">
+          <div class="ros-row"><span class="k">Watch for</span><span>Whether Ronaldo starts. He played all 90 in the opener at this same stadium and was kept quiet, so Portugal need more from him.</span></div>
+          <div class="cnote"><b>Concierge note:</b> stand for both anthems. The Uzbek anthem, sung by a country at its first World Cup, will give you chills.</div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="time">12:00 PM</span><span class="what">Kickoff · Portugal vs Uzbekistan</span><span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ros-body">
+          <div class="ros-row"><span class="k">The stakes</span><span>Portugal only drew their opener, so they almost have to win this. A giant under real pressure, right in front of you.</span></div>
+          <div class="ros-row"><span class="k">Listen for</span><span>Any Uzbekistan goal will detonate that side of the stadium. You would be inside a nation's history as it happens.</span></div>
+          <div class="cnote"><b>Concierge note:</b> watch the players <em class="accent">without</em> the ball, not just the ball. That is where the game is really decided.</div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="time">~1:50 PM</span><span class="what">Final whistle, wind down</span><span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ros-body">
+          <div class="ros-row"><span class="k">Then</span><span>Linger at NRG for the wind-down, or head back to Montrose. The diaspora bars will be loud either way.</span></div>
+          <div class="cnote"><b>Concierge note:</b> take one photo at the final whistle, then put the phone away and just be there. You will keep the day longer that way.</div>
+        </div>
+      </details>
+    </div>
   </section>
 
   <!-- SOCCER, THE BASICS -->
