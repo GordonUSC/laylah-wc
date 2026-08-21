@@ -456,7 +456,7 @@ footer .heart { color: var(--pt-red); }
       <div>NRG Stadium · Houston, Texas</div>
       <div style="margin-top: 10px; color: var(--pt-red-deep); text-transform: none; letter-spacing: 0.04em;">⚽ <strong>It's live, and your match just got bigger.</strong> Group K played its first round, and Portugal slipped, only a 1-1 draw with DR Congo. That means Portugal almost has to beat Uzbekistan on the 23rd. You are walking into a near-must-win for a giant. The stakes went up.</div>
       <div id="countdown" class="countdown" aria-live="polite"></div>
-      <div style="margin-top: 10px; font-size: 0.8rem; opacity: 0.75;">This page is alive. Darby, Gordon's AI, re-checks the facts and updates it as tournament news lands, right up to match day. Latest refresh: <strong>June 20</strong>, with the live Group K results folded in (now tuned to both your Houston stays you shared: <strong>7710 Main</strong> on the Red Line near NRG for match nights, and <strong>1111 Shepherd</strong> in Rice Military for your final night. The "Where you're based," "Getting to NRG," and recommendations are all built around those two addresses now).</div>
+      <div style="margin-top: 10px; font-size: 0.8rem; opacity: 0.75;">This page is alive. Darby, Gordon's AI, re-checks the facts and updates it as tournament news lands, right up to match day. Latest refresh: <strong>June 20</strong>, with the live Group K results folded in (now tuned to both your Houston stays you shared: <strong>the South Main place</strong> on the Red Line near NRG for match nights, and <strong>the Rice Military place</strong> for your final night. The "Where you're based," "Getting to NRG," and recommendations are all built around those two addresses now).</div>
     </div>
   </div>
 
@@ -559,8 +559,8 @@ footer .heart { color: var(--pt-red); }
       You've got two homes for this trip, and they split the job beautifully.
     </p>
     <ul class="notes">
-      <li><strong>Match nights · 7710 Main Street.</strong> This is the smart one. You're on the <strong>South Main / Medical Center stretch, right on the METRORail Red Line</strong>, about a 20-minute walk from NRG. On match day you don't fight downtown traffic at all: you either walk it, or hop the Red Line one or two stops south straight to NRG Park station. You are closer to the stadium than most people paying triple for a hotel.</li>
-      <li><strong>Final night · 1111 Shepherd Drive.</strong> This sits in <strong>Rice Military, on the Washington Avenue corridor</strong>, just west of downtown. It's one of Houston's better nightlife-and-restaurant strips, a short walk to Buffalo Bayou Park and Memorial Park, and a quick 10-minute rideshare to the FIFA Fan Festival in EaDo. The right place to land after the match is behind you and you just want a good night out.</li>
+      <li><strong>Match nights · the South Main place.</strong> This is the smart one. You're on the <strong>South Main / Medical Center stretch, right on the METRORail Red Line</strong>, about a 20-minute walk from NRG. On match day you don't fight downtown traffic at all: you either walk it, or hop the Red Line one or two stops south straight to NRG Park station. You are closer to the stadium than most people paying triple for a hotel.</li>
+      <li><strong>Final night · the Rice Military place.</strong> This sits in <strong>Rice Military, on the Washington Avenue corridor</strong>, just west of downtown. It's one of Houston's better nightlife-and-restaurant strips, a short walk to Buffalo Bayou Park and Memorial Park, and a quick 10-minute rideshare to the FIFA Fan Festival in EaDo. The right place to land after the match is behind you and you just want a good night out.</li>
     </ul>
     <p>
       Everything below is tuned to those two spots, not generic hotel advice.
@@ -592,7 +592,7 @@ footer .heart { color: var(--pt-red); }
       The match kicks off at 12:00 PM CT. Gates are expected to open around 9:00 AM (FIFA has been opening stadiums up to three hours before kickoff). Plan to be inside by 11:00 AM so you have time to clear security, find your seat, and feel the atmosphere settle.
     </p>
 
-    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--pt-red-deep);">From 7710 Main, this part is easy</h3>
+    <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: var(--pt-red-deep);">From the South Main place, this part is easy</h3>
     <p>
       Your match-night Airbnb is on the Red Line, so you have two clean options. <strong>Walk it</strong> (about 20 minutes south to NRG, fine in the morning before the heat peaks), or <strong>take the Red Line one or two stops south</strong> to NRG Park station. Trains run every 6 minutes during peak, fare is $1.25 one way. No downtown traffic, no parking scramble. This is the single biggest advantage of where you're staying.
     </p>
@@ -635,7 +635,7 @@ footer .heart { color: var(--pt-red); }
         </div>
       </details>
       <details>
-        <summary><span class="time">9:30 AM</span><span class="what">Head to NRG from 7710 Main</span><span class="chev" aria-hidden="true">›</span></summary>
+        <summary><span class="time">9:30 AM</span><span class="what">Head to NRG from the South Main place</span><span class="chev" aria-hidden="true">›</span></summary>
         <div class="ros-body">
           <div class="ros-row"><span class="k">Best way</span><span>Walk it (~20 min south, fine in the morning) or take the METRORail Red Line one or two stops to NRG Park. $1.25, trains every 6 minutes.</span></div>
           <div class="ros-row"><span class="k">Skip</span><span>No downtown traffic, no parking scramble. This is the whole advantage of where you're staying.</span></div>
@@ -881,7 +881,7 @@ footer .heart { color: var(--pt-red); }
       <button type="submit" class="send" aria-label="Send to Gordon">
         Send to Gordon <span class="arrow" aria-hidden="true">↗</span>
       </button>
-      <div class="hint">Opens your Messages app to Gordon · +1 818 472 7283</div>
+      <div class="hint">Opens your Messages app to Gordon</div>
     </form>
   </section>
 
@@ -927,7 +927,7 @@ function sendAsk(e) {
   var q = document.getElementById('q').value.trim();
   var prefix = "Hi Gordon, this is Laylah. Question for Darby: ";
   var body = q.length ? (prefix + q) : "Hi Gordon, this is Laylah. I have a question for Darby.";
-  var url = "sms:+18184727283?&body=" + encodeURIComponent(body);
+  var url = "sms:text Gordon?&body=" + encodeURIComponent(body);
   window.location.href = url;
   return false;
 }
